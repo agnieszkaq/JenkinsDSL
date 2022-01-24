@@ -1,6 +1,8 @@
-job('SPR') {
+job('svc') {
     scm {
-        git('git://github.com/wardviaene/docker-demo.git') {  
+        git('git://github.com/wardviaene/docker-demo.git') {  node -> // is hudson.plugins.git.GitSCM
+            node / gitConfigName('DSL User')
+            node / gitConfigEmail('jenkins-dsl@newtech.academy')
         }
     }
     triggers {
@@ -11,6 +13,6 @@ job('SPR') {
                          // Manage Jenkins -> Configure Tools -> NodeJS Installations -> Name
     }
     steps {
-        shell("ls ")
+        shell("npm install")
     }
 }
