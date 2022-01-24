@@ -1,4 +1,4 @@
-job('NodeJS example') {
+job('SPR') {
     scm {
         git('git://github.com/wardviaene/docker-demo.git') {  
         }
